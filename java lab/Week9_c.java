@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.Arrays;
 
-public class Week9c {
+public class Week9_c {
     public static void main(String args[]) throws IOException {
         FileInputStream fis = new FileInputStream("D://sai_kaushik//input.txt");
         FileWriter fw = new FileWriter("D://sai_kaushik//output.txt");
