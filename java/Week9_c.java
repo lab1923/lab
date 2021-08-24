@@ -1,24 +1,31 @@
 import java.io.*;
-import java.util.Arrays;
-
-public class Week9_c {
-    public static void main(String args[]) throws IOException {
-        FileInputStream fis = new FileInputStream("D://sai_kaushik//input.txt");
-        FileWriter fw = new FileWriter("D://sai_kaushik//output.txt");
-        InputStreamReader isr = new InputStreamReader(fis);
-        BufferedReader br = new BufferedReader(isr);
-        String line;
-        String[] wordlist = {};
-        while ((line = br.readLine()) != null) {
-            wordlist = line.split(" ");
+import java.util.*;
+public class Week9c 
+{
+    public static void main(String args[]) throws IOException
+    {
+        ArrayList<String> l1=new ArrayList<String>();
+        ArrayList<String> l2=new ArrayList<String>();
+        File f1=new File("stopwords.txt");
+        File f2=new File("technical.txt");
+        Scanner sc1=new Scanner(f1);
+        Scanner sc2=new Scanner(f2);
+        while(sc1.hasNext())
+        {
+            String a=sc1.next();
+            l1.add(a.toLowerCase());
         }
-        Arrays.sort(wordlist);
-        for (String s : wordlist) {
-            fw.write(s);
-            fw.write(" ");
+        while(sc2.hasNext())
+        {
+            String a=sc2.next();
+            if(l1.contains(a)||l2.contains(a))
+            {
+                continue;
+            }
+            else
+            l2.add(a.toLowerCase());
         }
-        fw.close();
-        br.close();
-        System.out.println("Check the output file");
+        Collections.sort(l2);
+        System.out.println(l2);
     }
 }
