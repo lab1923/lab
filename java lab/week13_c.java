@@ -47,9 +47,9 @@ class Csv extends JFrame implements ActionListener {
         } else {
           String value = deptBox.getSelectedItem().toString();
           String data = "name | rollno | dept " + "\n";
-          for (int i = 0; i < 100; i++) {
-            if (value == fileInfo[i][2]) {
-              data = data + fileInfo[i][0] + " | " + fileInfo[i][1] + " | " + fileInfo[i][2] + "\n";
+          for (int i = 0; i < id; i++) {
+            if (value.equals(fileInfo[i][2])) {
+              data += fileInfo[i][0] + " | " + fileInfo[i][1] + " | " + fileInfo[i][2] + "\n";
             }
           }
           t.setText(data);
