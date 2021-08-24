@@ -12,11 +12,7 @@ public class Week14b extends Applet implements ChangeListener{
     
     public void stateChanged(ChangeEvent e)
     {
-            x = s1.getValue();
-            y = s2.getValue();
-            z = s3.getValue();
-            c = new Color(x,y,z);
-            setBackground(c);
+        setBackground(new Color(s1.getValue(),s2.getValue(),s3.getValue()));
     }
     public void init(){
         heading=new JLabel("sliders");
