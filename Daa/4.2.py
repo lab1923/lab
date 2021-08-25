@@ -1,4 +1,4 @@
-#pivot as high
+#pivot at high
 
 import random
 
