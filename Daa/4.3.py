@@ -3,9 +3,9 @@
 import random
 
 def partition(arr,low,high):
-    pivot_index = random.randint(low,high)
-    pivot = arr[low]
-    arr[high],arr[pivot_index] = arr[pivot_index],arr[high]
+    random_index = random.randint(low,high)
+    pivot = arr[random_index]
+    arr[high],arr[random_index] = arr[random_index],arr[high]
     pivot_index = low
     for i in range(low,high):
         if pivot >= arr[i]:
