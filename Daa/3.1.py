@@ -1,57 +1,22 @@
-import random
-import timeit
-import matplotlib.pyplot as plt
-import math
-def merge(a) :
-  if(len(a)>1):
-    m = int(len(a)/2)
-    l = a[:m]
-    r = a[m:]
-    merge(l)
-    merge(r)
-    mergesort(a,l,r)
-def mergesort(a,l,r):
-    i=j=k=0
-    while(i<len(l) and j<len(r)):
-        global com
-        if(l[i]<r[j]):
-            a[k] = l[i]
-            i += 1
-        else :
-            a[k] = r[j]
-            j += 1
-        k += 1
-        com += 1
-    while(i<len(l)):
-        a[k] = l[i]  
-        i += 1
-        k += 1
-    while(j<len(r)):
-        a[k] = r[j]
-        j += 1
-        k += 1
-comList = []
-print("N Time")
-for i in range(1,201):
-    a = []
-    com = 1
-    for j in range(i):
-       a.append(random.randint(1,100))
-    
-    start = timeit.default_timer()
-    merge(a)
-    end = timeit.default_timer()
-    if(i%10==0):
-      print(i,(end-start))
-    comList.append(com)
-n = [*range(1, 201, 1)]
-nn=[]
-for x in n:
-		nn.append(x*math.log(x,2))
-plt.plot(comList,n,color='green', linewidth=3,label='Mergesort time')
-plt.plot(nn,n,color='red', linewidth=3,label='nlogn')
-plt.title('Merge Sort Running ime')
-plt.xlabel('value of time')
-plt.ylabel('value of n')
-plt.legend()
-plt.show()
+def merge_sort(list1,list2):
+    arr = [0]*(len(list1)+len(list2))
+    i = j = k = 0
+    while i < len(list1) and j < len(list2):
+        if list1[i] <= list2[j]:
+            arr[k] = list1[i]
+            i+=1
+        else:
+            arr[k] = list2[j]
+            j+=1
+        k+=1
+    while i < len(list1):
+        arr[k] = list1[i]
+        k+=1;i+=1
+    while j < len(list2):
+        arr[k] = list2[j]
+        k+=1;j+=1    
+    return arr
+
+list1 = list(map(int,input("Enter the list 1").split()))
+list2 = list(map(int,input("Enter the list 2").split()))
+print(merge_sort(list1,list2))
