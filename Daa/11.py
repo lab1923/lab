@@ -24,7 +24,7 @@ def matrix_chain(d,n):
                 if min < m[i][j]:
                     m[i][j] = min
                     s[i][j] = k
-    print("Maximum size in matrix :",m[1][n-1])
+    print("Maximum no of multiplications :",m[1][n-1])
     order(s,1,n-1,n)
     
     
