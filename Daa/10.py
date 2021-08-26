@@ -1,4 +1,4 @@
-method 2
+# method 2
 import numpy as np
 def floyd(graph ,v):
     for k in range(v):
