@@ -25,3 +25,24 @@ weights = list(map(int,input("Enter the weights : ").split()))
 profits = list(map(int,input("Enter the profits : ").split()))
 capacity = int(input("Enter the maximum capacity : ")) 
 knapsnack(objects,weights,profits,capacity)
+
+
+#method 2
+# import numpy as np
+# items = int(input("Enter no of items : "))
+# capacity = int(input("Enter Capacity : "))
+# pi =[0]+ list(map(int,input("Enter Profits : ").split()))
+# w = [0]+list(map(int,input("Enter weights : ").split()))
+# item = list(i for i in range(items+1))
+# p = np.zeros([items+1, capacity+1],dtype=int)
+# for i in range(1,items+1):
+#     for j in range(1,capacity+1):
+#         a = p[i-1,j]
+#         if(j<w[i]):
+#             b = -1
+#         else:
+#             b = p[i-1,j-w[i]]+pi[i]
+#         p[i,j] = int(max(a,b))
+# m = p[items,capacity]
+# print(p) 
+# print("maximum profit that can be obtained is ",p[items,capacity])
